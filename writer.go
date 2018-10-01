@@ -778,3 +778,20 @@ func (p *MediaPlaylist) SetWinSize(winsize uint) error {
 	p.winsize = winsize
 	return nil
 }
+
+// Copy clone to new segment
+func (s *MediaSegment) Clone() *MediaSegment {
+	return &MediaSegment{
+		SeqId:           s.SeqId,
+		Title:           s.Title,
+		URI:             s.URI,
+		Duration:        s.Duration,
+		Limit:           s.Limit,
+		Offset:          s.Offset,
+		Key:             s.Key,
+		Map:             s.Map,
+		Discontinuity:   s.Discontinuity,
+		SCTE:            s.SCTE,
+		ProgramDateTime: s.ProgramDateTime,
+	}
+}
